@@ -22,7 +22,6 @@ import json
 from flask import Flask
 app = Flask(__name__)
 
-
 @app.route('/predict', methods=['POST'])
 def predict():
     midi_data = json.loads(request.data)
@@ -34,7 +33,7 @@ def predict():
     tempo = midi_data["tempo"]
     total_seconds = midi_data["total_seconds"]
     ret_midi = generate_midi(pitches, start_times, durations, tempo, total_seconds)
-    return repr(ret_midi)
+    return json.dumps(ret_midi)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

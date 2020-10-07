@@ -37,7 +37,6 @@ generator = melody_rnn_sequence_generator.MelodyRnnSequenceGenerator(
 def _steps_to_seconds(steps, qpm):
     return steps * 60.0 / qpm / steps_per_quarter
 
-TEMP_MIDI = "temp.mid"
 
 def make_midi(pitches, start_times, durations, tempo, midi_path):
     track    = 0
@@ -54,6 +53,7 @@ def make_midi(pitches, start_times, durations, tempo, midi_path):
         MyMIDI.writeFile(output_file)
 
 def make_notes_sequence(pitches, start_times, durations, tempo):
+    TEMP_MIDI = "temp.mid"
     make_midi(pitches, start_times, durations, tempo, TEMP_MIDI)
     return mm.midi_file_to_sequence_proto(TEMP_MIDI)
 

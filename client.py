@@ -11,7 +11,7 @@ def compute_next_notes(midi_data, duration=4):
   print(midi_data)
 
   response = requests.post(f'{endpoint}/predict', headers=headers, data=json.dumps(midi_data))
-  return response.content
+  return response.json()
 
 
 midi_data = {
