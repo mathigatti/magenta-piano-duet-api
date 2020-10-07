@@ -1,0 +1,4 @@
+tensorflow
+magenta
+Flask
+gunicorn
