@@ -14,12 +14,13 @@
 # limitations under the License.
 # 
 
-from predict import generate_midi
-
-from flask import request
 import json
 
+from flask import request
 from flask import Flask
+
+from predict import generate_midi
+
 app = Flask(__name__)
 
 @app.route('/predict', methods=['POST'])
