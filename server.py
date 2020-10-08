@@ -31,8 +31,8 @@ def predict():
     start_times = midi_data["start_times"]
     durations = midi_data["durations"]
     tempo = midi_data["tempo"]
-    total_seconds = midi_data["total_seconds"]
-    ret_midi = generate_midi(pitches, start_times, durations, tempo, total_seconds)
+    length = midi_data["length"]
+    ret_midi = generate_midi(pitches, start_times, durations, tempo, length)
     return json.dumps(ret_midi)
 
 if __name__ == '__main__':

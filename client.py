@@ -19,7 +19,7 @@ midi_data = {
   "start_times": [0,1,2,3],
   "durations": [1,1,1,2],
   "tempo": 120,
-  "total_seconds": 100
+  "length": 10
 }
 next_notes = compute_next_notes(midi_data)
 print(next_notes)

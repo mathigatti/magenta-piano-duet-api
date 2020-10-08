@@ -57,10 +57,7 @@ def make_notes_sequence(pitches, start_times, durations, tempo):
     make_midi(pitches, start_times, durations, tempo, TEMP_MIDI)
     return mm.midi_file_to_sequence_proto(TEMP_MIDI)
 
-def note2dict(note):
-    return {"pitch": note.pitch, "velocity": note.velocity, "start_time": note.start_time, "end_time": note.end_time}
-
-def generate_midi(pitches, start_times, durations, tempo, total_seconds):
+def generate_midi(pitches, start_times, durations, tempo, length):
     primer_sequence = make_notes_sequence(pitches, start_times, durations, tempo)
 
     generator_options = generator_pb2.GeneratorOptions()
@@ -71,8 +68,12 @@ def generate_midi(pitches, start_times, durations, tempo, total_seconds):
     qpm = tempo/2 # I'm not sure about this
     generator_options.generate_sections.add(
         start_time=last_end_time + _steps_to_seconds(1, qpm),
-        end_time=_steps_to_seconds(total_seconds, qpm))
+        end_time=length)
 
     # generate the output sequence
     generated_sequence = generator.generate(primer_sequence, generator_options)
-    return [note2dict(note) for note in generated_sequence.notes]
+
+    predicted_pitches = [note.pitch for note in generated_sequence.notes]
+    predicted_start_times = [note.start_time for note in generated_sequence.notes]
+    predicted_durations = [note.end_time - note.start_time for note in generated_sequence.notes]
+    return {"pitches": predicted_pitches, "start_times": predicted_start_times, "durations": predicted_durations}
