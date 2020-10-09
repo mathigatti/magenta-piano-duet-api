@@ -8,7 +8,7 @@ Magenta developed [a cool website](https://experiments.withgoogle.com/ai/ai-duet
 
 You need to provide general details like tempo and length of the prediction to the AI, also the previous notes you want the machine to continue (if any).
 
-### The input data looks should like like this
+### The input data should look like this
 
 ```python
 {'pitches': [60, 60, 61, 62], 'start_times': [0, 1, 2, 3], 'durations': [1, 1, 1, 2], 'tempo': 120, 'length': 10}
