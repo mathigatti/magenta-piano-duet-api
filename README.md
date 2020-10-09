@@ -8,6 +8,8 @@ Magenta developed [a cool website](https://experiments.withgoogle.com/ai/ai-duet
 
 You need to provide general details like tempo and length of the prediction to the AI, also the previous notes you want the machine to continue (if any).
 
+**Note**: If you use the free public endpoint it might take a few seconds to start (it goes to sleep during inactivity) after that it should have a good time response. 
+
 ### The input data should look like this
 
 ```python
