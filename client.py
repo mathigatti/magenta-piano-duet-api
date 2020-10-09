@@ -1,7 +1,10 @@
 import requests
 import json
 
-endpoint = "http://localhost:8080"
+production_endpoint = "https://ai-duet-ilfqxfroaq-uc.a.run.app"
+local_endpoint = "http://localhost:8080"
+
+endpoint = production_endpoint
 
 def compute_next_notes(midi_data, duration=4):
   headers = {
