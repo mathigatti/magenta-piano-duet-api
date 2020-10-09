@@ -20,7 +20,7 @@ from magenta import music as mm
 from magenta.models.melody_rnn import melody_rnn_model
 from magenta.models.melody_rnn import melody_rnn_sequence_generator
 from magenta.models.shared import sequence_generator_bundle
-from magenta.protobuf import generator_pb2
+from note_seq.protobuf import generator_pb2
 from midiutil import MIDIFile
 
 BUNDLE_NAME = 'attention_rnn'

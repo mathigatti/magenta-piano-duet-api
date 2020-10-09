@@ -1,3 +1,5 @@
+tensorflow
 magenta
 Flask
 MIDIUtil
+protobuf
