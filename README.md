@@ -1,6 +1,6 @@
 # Magenta Piano Duet API
 
-Magenta developed [a cool website](https://experiments.withgoogle.com/ai/ai-duet/view/) to play piano with an AI in your browser. To make it easier to interact with this technology programatically I made a simple REST API.
+Magenta developed [a cool website](https://experiments.withgoogle.com/ai/ai-duet/view/) to play piano with an AI in your browser. Discussing with [@ghalestrilo](https://github.com/ghalestrilo) we realized it might be useful to develop easier ways to interact with this technology programatically so I made this simple REST API.
 
 ![](https://lh3.googleusercontent.com/SK7iorys5N1DNR82MQVyJomG4l2c88f20yyD_7sttUZEgqF0-dFmahNqN1MUJ5eeoyD3QTsBVMmpQA6C-ISVt64glzsPBNLWyw=s850)
 
