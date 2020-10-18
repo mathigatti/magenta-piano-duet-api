@@ -41,7 +41,7 @@ python client.py
 ## 1. Install requirements
 
 ```bash
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## 2. Run server
